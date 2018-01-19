@@ -1,0 +1,66 @@
+STL의 sort() - 두가지 방법으로 정렬(범위 지정, 범위 비교자 지정)
+	void sort (RandomAccessIterator first, RandomAccessIterator last);
+	void sort (RandomAccessIterator first, RandomAccessIterator last, Compare comp);
+	
+	sort(a.begin(), a.end());
+	sort(a.begin(), a.end(), myfunc); - myfunc은 내가 만든 비교자의 함수포인터
+	
+STL특징
+1. 다양한 타입을 지원해주기 위해서 "템플릿을 사용"
+2. 매개변수 및 결과값 전달의 빠른 속도를 위해 "레퍼런스 사용"
+3. 함수안에서 변환이 없는 것을 명시적으로 전달하기 위해 "const사용"
+
+연결 리스트의 특징
+1. 고정 길이인 배열에 비해 길이가 가변적이다.
+2. 중간에 데이터 삽입, 삭제가 용이하다.
+3. 저장할 데이터 개수가 많으면서 검색을 자주 한다면 다른 컨테이너 라이브러리를 사용해야 한다.
+4. 데이터를 랜덤하게 접근하는 경우가 많지 않다.
+
+a.begin() : 시작지점을 나타내는 포인터를 반환한다.
+a.end() : 끝지점 바로 다음 지점을 나타내는 포인터를 반환한다
+list<int>::iterator it : 위치를 나타내는 포인터
+*it : 포인터기때문에 *연산자 이용해 값에 접근 가능하다.
+a.rbegin() : 끝지점
+r.rend() : 첫번쩌 바로 직전
+
+push() : 삽입
+pop() : 삭제
+front() : 앞에값 그냥 반환
+back() : 뒤에값 그냥 반환
+insert() : 3가지 방법으로 삽입할 수 있다.( 지정위치 삽입, 지정위치 지정개수 삽입, 지정위치 지정범위삽입)
+	iterator insert( iterator _Where, const Type& _Val );
+	void insert( iterator _Where, size_type _Count, const Type& _Val );
+	template void insert( iterator _Where, InputIterator _First, InputIterator _Last );
+	
+	첫번째 방법 : iterator로 선택한 위치에 원하는 값 삽입
+	두번째 방법 : iterator로 선택한 위치에 원하는 개수만큼 원하는 값 삽입
+	세번째 방법 : iterator로 선택한 위치에 원하는 리스트의 시작, 끝위치 모든것 삽입.
+	a.insert(a.begin(), 30);
+	a.insert(++a.begin(), 3, 30);
+	a.insert(++a.begin(), b.begin(), b.end());
+	
+erase() : 두가지 방법으로 삭제 ( 지정위치 삭제, 지정 범위 삭제) - 삭제되는 것의 다음 반복자 반환
+	iterator erase( itreator _Where);
+	iterator erase( iterator _First, iterator _Last);
+	
+	첫번째 방법 : iterator로 선택한 위치 삭제
+	두번재 방법 : iterator로 선택한 범위 삭제
+	a.erase(a.begin()); - 첫번째 삭제
+	a.erase(++a.begin(), a.end()); - 두번째부터 마지막까지 모두 삭제
+	
+remove() : erase()는 iterator를 이용한 삭제, remove()는 값을 이용한 삭제이다.
+	void remove( const Type& _Val);
+	
+	a.remove(20); - 값 중 20인것은 모두 삭제한다.
+	
+sort() : 요소들이 오름차순으로 정렬된다. 
+	template void sort( Traits _Comp );
+	
+	()안에 함수객체를 선언하여 내가 원하는 형태로 정렬할 수 있다.
+	
+	list.sort(greater<int>()): 내림차순으로 정렬하는 방법
+	
+	
+	
+	
+	
