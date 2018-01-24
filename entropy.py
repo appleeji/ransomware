@@ -1,4 +1,4 @@
-mport re
+import re
 readStream = open("/home/appleeji/dgist/deeplearning.py")
 writeStream = open("/home/appleeji/dgist/deeplearning.tar.gz")
 
