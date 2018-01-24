@@ -1,6 +1,6 @@
 import re
-readStream = open("/home/appleeji/dgist/deeplearning.py")
-writeStream = open("/home/appleeji/dgist/deeplearning.tar.gz")
+readStream = open("/home/jung/Desktop/valid_64x64/00001.png")
+writeStream = open("/home/jung/Desktop/valid_64x64/49999.png")
 
 r = readStream.read()
 w = writeStream.read()

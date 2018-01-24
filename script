@@ -1,0 +1,1 @@
+ls *.png | parallel ~/ransomware/random/ent {} >> ret.txt

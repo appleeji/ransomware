@@ -2,7 +2,7 @@
 #   Unix make file for random test program
 
 CC = gcc
-CFLAGS = -g -Wall
+CFLAGS = -O3 -march=native -Wall
 #CFLAGS = -O
 
 ent:	ent.o iso8859.o randtest.o chisq.o

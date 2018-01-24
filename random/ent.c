@@ -253,6 +253,9 @@ int main(int argc, char *argv[])
 	/* Print calculated results */
 
 	if (!terse) {
+           printf("%s %.9f\n", argv[1], ent);
+		exit(0);
+
            printf("Entropy = %f bits per %s.\n", ent, samp);
            printf("\nOptimum compression would reduce the size\n");
            printf("of this %ld %s file by %d percent.\n\n", totalc, samp,
