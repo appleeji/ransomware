@@ -27,6 +27,7 @@
 #include <string.h>
 #include <ctype.h>
 #include <math.h>
+#include <stdlib.h>
 #ifdef _WIN32
 #include <fcntl.h>
 #include <io.h>

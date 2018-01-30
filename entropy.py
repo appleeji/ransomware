@@ -1,7 +1,9 @@
 import re
-readStream = open("/home/jung/Desktop/valid_64x64/00001.png")
-writeStream = open("/home/jung/Desktop/valid_64x64/49999.png")
+import sys
+readStream = open("/home/jung/ransomware/png_entropy.txt")
+writeStream = open("/home/jung/ransomware/NVMalloc.pdf")
 
+#readStream = open(sys.argv[1])
 r = readStream.read()
 w = writeStream.read()
 
@@ -10,7 +12,6 @@ w = re.split("['\n']",w)
 
 r_len = len(r)
 w_len = len(w)
-
 def preprocess(data):
     leng = len(data)
     for i in range(leng-1):
